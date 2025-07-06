@@ -43,39 +43,71 @@
 </head>
 <body>
   <div class="top-bar">
-    <span>root@kali:~/blogs</span>
+    <span>hwaker@kali:~/blogs</span>
     <span>Hwaker's Blogs</span>
   </div>
 
   <div class="blog-entry">
-    <div class="blog-title">[1] Cracking into a CTF Box</div>
-    <img src="https://via.placeholder.com/600x300.png?text=CTF+Walkthrough" alt="CTF">
+    <div class="blog-title">[1] Getting you first $250 dollar bounty: Reflected XSS</div>
+    <img src="xss3.png" alt="CTF"style="display: block; margin: 0 auto;>
     <div class="blog-summary">
-      A thrilling walkthrough of how I pwned a vulnerable CTF machine using enumeration, privilege escalation, and a bit of luck.
+        <h2></h2>
+  <p><B>A throw back to my first ever bug caught out of blue while checking out the current status of an item I bought which was sent via bluedart.</B> </p>
+  
+
+      
+        <h2>Vulnerability Overview:</h2>
+  <p>The identified vulnerability is a reflected Cross-Site Scripting (XSS) vulnerability. It allows an attacker to inject malicious code into the website's HTML response, which is then executed by the victim's browser. In this case, an attacker could execute arbitrary JavaScript code by manipulating the "trackNo" parameter.</p>
+ 
+    <h2>Vulnerability Impact:</h2>
+  <p>Exploitation of this vulnerability can have several negative consequences, including:
+
+Execution of arbitrary JavaScript code within the context of the victim's browser, leading to potential theft of sensitive information, session hijacking, or further attacks.
+Compromised user experience and trust due to unexpected or malicious behavior on the website.
+Damage to the reputation and credibility of Blue Dart.</p>
+  
+    <h2>Steps to Reproduce:</h2>
+  <p>To reproduce this vulnerability, follow these steps:
+Access the URL: https://www.bluedart.com/web/guest/trackdartresultthirdparty?trackFor=0&&trackNo=%3Cscript%3Ealert(1)%3C/script%3E.
+Observe that the injected script is executed, resulting in the display of an alert dialog with the message "1".</p>
+  <img src="xss1.png" alt="description" style="display: block; margin: 0 auto; width: 60%; max-width: 800px; height: auto; border: 1px solid #00ff00;"/><br>
+
+  <img src="xss2.png" alt="description" style="display: block; margin: 0 auto; width: 60%; max-width: 800px; height: auto; border: 1px solid #00ff00;">
+
+    <h2>Recommendation:</h2>
+  <p>To mitigate this vulnerability, we recommend the following actions:
+Implement proper input validation and sanitization techniques to ensure that user-supplied data is properly encoded or filtered to prevent the injection of malicious code.
+Implement Content Security Policy (CSP) headers to restrict the execution of untrusted JavaScript code.
+Conduct a thorough security review and penetration testing of the entire website to identify and address any additional vulnerabilities.</p>
+  
+      
+
+
+
     </div>
   </div>
 
   <div class="blog-entry">
-    <div class="blog-title">[2] Man-in-the-Middle: The Wi-Fi Snatch</div>
-    <img src="https://via.placeholder.com/600x300.png?text=MITM+Attack" alt="MITM">
+    <div class="blog-title">[2] Shortest Path to OSCP : A Realistic take on OSCP Journey</div>
+    <img src="https://via.placeholder.com/600x300.png?text=MITM+Attack" alt="OSCP">
     <div class="blog-summary">
-      How I simulated a real-world man-in-the-middle attack to capture credentials on a fake hotspot using bettercap.
+      Work in Progress...
     </div>
   </div>
 
   <div class="blog-entry">
-    <div class="blog-title">[3] Bypassing WAFs like a Ninja</div>
-    <img src="https://via.placeholder.com/600x300.png?text=WAF+Bypass" alt="WAF Bypass">
+    <div class="blog-title">[3] PNPT or Ejpt : Which the right beginner friendly cert?</div>
+    <img src="https://via.placeholder.com/600x300.png?text=WAF+Bypass" alt="PNPT/EJPT">
     <div class="blog-summary">
-      A quick writeup on testing and evading modern Web Application Firewalls using payload fuzzing and encoding tricks.
+      Work in Progress...
     </div>
   </div>
 
   <div class="blog-entry">
-    <div class="blog-title">[4] Reversing Malware with Ghidra</div>
-    <img src="https://via.placeholder.com/600x300.png?text=Reverse+Engineering" alt="Reverse Engineering">
+    <div class="blog-title">[4] How to Fare in Cybersecurity in 2025</div>
+    <img src="https://via.placeholder.com/600x300.png?text=Reverse+Engineering" alt="Hack">
     <div class="blog-summary">
-      A basic dive into reverse engineering a piece of Windows malware with Ghidra and uncovering its payload logic.
+      Work in Progress...
     </div>
   </div>
 </body>
