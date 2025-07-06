@@ -48,11 +48,11 @@
   </div>
 
   <div class="blog-entry">
-    <div class="blog-title">[1] Getting you first $250 dollar bounty: Reflected XSS</div>
+    <div class="blog-title">[1] Getting your first $250 dollar bounty: Reflected XSS</div>
     <img src="xss3.png" alt="CTF"style="display: block; margin: 0 auto;>
     <div class="blog-summary">
         <h2></h2>
-  <p><B>A throw back to my first ever bug caught out of blue while checking out the current status of an item I bought which was sent via bluedart.</B> </p>
+  <p><B>A throw back to my first ever bug caught out of blue while checking out the current status of an item I bought which was sent via a well established Logistics company.</B> </p>
   
 
       
@@ -64,11 +64,11 @@
 
 Execution of arbitrary JavaScript code within the context of the victim's browser, leading to potential theft of sensitive information, session hijacking, or further attacks.
 Compromised user experience and trust due to unexpected or malicious behavior on the website.
-Damage to the reputation and credibility of Blue Dart.</p>
+Damage to the reputation and credibility of Logistics site.</p>
   
     <h2>Steps to Reproduce:</h2>
   <p>To reproduce this vulnerability, follow these steps:
-Access the URL: https://www.bluedart.com/web/guest/trackdartresultthirdparty?trackFor=0&&trackNo=%3Cscript%3Ealert(1)%3C/script%3E.
+Access the URL: https://www.logisticsamplesite.com/path/to/xss?param1=0&&trackNo=%3Cscript%3Ealert(1)%3C/script%3E.
 Observe that the injected script is executed, resulting in the display of an alert dialog with the message "1".</p>
   <img src="xss1-1.png" alt="description" style="display: block; margin: 0 auto; width: 60%; max-width: 800px; height: auto; border: 1px solid #00ff00;"/><br>
 
