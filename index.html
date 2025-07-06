@@ -3,84 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yathu G Krishna | Cybersecurity Engineer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Hwaker's PortifoliOS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: monospace;
+      background-color: #000;
+      color: #00ff00;
+    }
+    .top-bar {
+      background: linear-gradient(to right, #ccc, #eee);
+      padding: 5px 10px;
+      color: #000;
+      font-weight: bold;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #888;
+    }
+    .top-bar span {
+      font-size: 14px;
+    }
+    .terminal {
+      padding: 10px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Kali_Linux_logo_2.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%;
+      white-space: pre-wrap;
+      height: 90vh;
+      overflow-y: auto;
+    }
+    .option {
+      cursor: pointer;
+      color: #00ff00;
+      display: block;
+      margin: 10px 0;
+    }
+    .option:hover {
+      color: #00ccff;
+      text-decoration: underline;
+    }
+    #output {
+      margin-top: 20px;
+    }
+    .prompt {
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Yathu G Krishna</h1>
-    <p>Cybersecurity Engineer | OSCP | PNPT | EJPT</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#awards">Awards</a>
-      <a href="#blog">Blog</a>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>OSCP certified Cybersecurity Engineer with 4+ years of experience in penetration testing, network assessments, and vulnerability management. Passionate about securing systems and creating automation tools that streamline security workflows.</p>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <h3>Cyber Security Engineer - Alstom</h3>
-    <p>July 2023 – Present, Bangalore</p>
-    <ul>
-      <li>VAPT on OT and network systems</li>
-      <li>Security awareness sessions and client collaboration</li>
-      <li>Firewall and segmentation testing</li>
-    </ul>
-
-    <h3>Cyber Security Analyst - EY</h3>
-    <p>October 2020 – July 2023, Kochi</p>
-    <ul>
-      <li>100+ application VAPT assessments</li>
-      <li>Manual & automated testing on Web, API, Thick Clients</li>
-      <li>Tool development and false positive reviews</li>
-    </ul>
-
-    <h3>Cyber Security Intern - EY</h3>
-    <p>June 2019 – August 2019</p>
-    <ul>
-      <li>Network and web pentesting</li>
-      <li>Training in threat detection & security monitoring</li>
-    </ul>
-  </section>
-
-  <section id="skills">
-    <h2>Skills & Certifications</h2>
-    <ul>
-      <li>Tools: Burp Suite, Nessus, Metasploit, Qualys, Nmap</li>
-      <li>Languages: Python, Bash, C</li>
-      <li>Certifications: OSCP, PNPT, EJPT, OSWP, CAP, Azure 900</li>
-    </ul>
-  </section>
-
-  <section id="awards">
-    <h2>Awards</h2>
-    <ul>
-      <li>Silver Trophy – Alstom</li>
-      <li>SPOT Awards – EY</li>
-      <li>People's Champion – EY</li>
-    </ul>
-  </section>
-
-  <section id="blog">
-    <h2>Blog</h2>
-    <p>Explore writeups and technical deep-dives across four categories:</p>
-    <ul>
-      <li><a href="#web">Web</a></li>
-      <li><a href="#network">Network</a></li>
-      <li><a href="#thickclient">Thickclient</a></li>
-      <li><a href="#research">Research</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Yathu G Krishna | <a href="mailto:yathugk2016@gmail.com">Contact Me</a></p>
-  </footer>
+  <div class="top-bar">
+    <span>root@kali:~</span>
+    <span>Hwaker's PortifoliOS</span>
+  </div>
+  <div class="terminal">
+    <div class="prompt">root@kali:~#</div>
+    <div>&gt; Select an option by clicking:</div>
+    <div class="option" onclick="showAbout()">1) About Me</div>
+    <div class="option" onclick="location.href='blog.html'">2) Blogs</div>
+    <div class="option" onclick="location.href='https://www.youtube.com/@MalluHacker'">3) Videos</div>
+    <div class="option" onclick="showResearch()">4) Research</div>
+    <div id="output"></div>
+  </div>
+  <script>
+    function showAbout() {
+      document.getElementById("output").innerText =
+        "Just a normal dude who does not know what to do with life trying to solve world's cybersecurity challenges.";
+    }
+    function showResearch() {
+      document.getElementById("output").innerText =
+        "Research section is under construction... Stay tuned!";
+    }
+  </script>
 </body>
 </html>

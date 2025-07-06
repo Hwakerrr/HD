@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hwaker's Blog</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: monospace;
+      margin: 0;
+      padding: 0 20px;
+    }
+    .top-bar {
+      background: linear-gradient(to right, #ccc, #eee);
+      padding: 10px;
+      color: #000;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .blog-entry {
+      margin: 40px 0;
+      border: 1px solid #00ff00;
+      padding: 20px;
+    }
+    .blog-entry img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #00ff00;
+      margin-bottom: 10px;
+    }
+    .blog-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .blog-summary {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <span>root@kali:~/blogs</span>
+    <span>Hwaker's Blogs</span>
+  </div>
+
+  <div class="blog-entry">
+    <div class="blog-title">[1] Cracking into a CTF Box</div>
+    <img src="https://via.placeholder.com/600x300.png?text=CTF+Walkthrough" alt="CTF">
+    <div class="blog-summary">
+      A thrilling walkthrough of how I pwned a vulnerable CTF machine using enumeration, privilege escalation, and a bit of luck.
+    </div>
+  </div>
+
+  <div class="blog-entry">
+    <div class="blog-title">[2] Man-in-the-Middle: The Wi-Fi Snatch</div>
+    <img src="https://via.placeholder.com/600x300.png?text=MITM+Attack" alt="MITM">
+    <div class="blog-summary">
+      How I simulated a real-world man-in-the-middle attack to capture credentials on a fake hotspot using bettercap.
+    </div>
+  </div>
+
+  <div class="blog-entry">
+    <div class="blog-title">[3] Bypassing WAFs like a Ninja</div>
+    <img src="https://via.placeholder.com/600x300.png?text=WAF+Bypass" alt="WAF Bypass">
+    <div class="blog-summary">
+      A quick writeup on testing and evading modern Web Application Firewalls using payload fuzzing and encoding tricks.
+    </div>
+  </div>
+
+  <div class="blog-entry">
+    <div class="blog-title">[4] Reversing Malware with Ghidra</div>
+    <img src="https://via.placeholder.com/600x300.png?text=Reverse+Engineering" alt="Reverse Engineering">
+    <div class="blog-summary">
+      A basic dive into reverse engineering a piece of Windows malware with Ghidra and uncovering its payload logic.
+    </div>
+  </div>
+</body>
+</html>
