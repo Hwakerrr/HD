@@ -100,17 +100,14 @@ Conduct a thorough security review and penetration testing of the entire website
   <p>A Stored XSS vulnerability was discovered in the application where a user with privileges to edit the Login Page Notice (displayed on the login page) injected malicious JavaScript code using the following payload: <pre>&lt;a href=&quot;javascript:alert(String.fromCharCode(88,83,83))&quot;&gt;Click Me!&lt;/a&gt;</pre></p>When other users visit the login page and click on the malicious link, arbitrary JavaScript executes in their browser in the context of the application, leading to XSS exploitation.</p>
  
     <h2>Vulnerability Impact:</h2>
-  <p>User session hijacking: Attackers can steal session cookies or tokens.
+  <p>• User session hijacking: Attackers can steal session cookies or tokens.</p>
 
-Phishing and social engineering: Malicious scripts can redirect users or display fake forms.
-
-Credential theft: Scripts can intercept usernames/passwords on login pages.
-
-Browser exploitation: Attackers can fingerprint the user or exploit browser vulnerabilities.
-
-Brand and legal damage: Users affected on a public-facing login screen erodes trust and may have regulatory implications (e.g., GDPR).
-
-The fact that the payload persists and is visible on a public login page magnifies the risk, especially if users are not authenticated yet and may not be expecting dynamic or interactive content.</p>
+<p>• Phishing and social engineering: Malicious scripts can redirect users or display fake forms.</p>
+<p>• Credential theft: Scripts can intercept usernames/passwords on login pages.</p>
+<p>• Browser exploitation: Attackers can fingerprint the user or exploit browser vulnerabilities.</p>
+<p>• Brand and legal damage: Users affected on a public-facing login screen erodes trust and may have regulatory implications (e.g., GDPR).</p>
+<p>• The fact that the payload persists and is visible on a public login page magnifies the risk, especially if users are not authenticated yet and may not be expecting dynamic or interactive content.</p>
+</p>
   
     <h2>Steps to Reproduce:</h2>
 <p>• Login as a user with permission to edit the Login Page Notice.</p>
@@ -128,9 +125,10 @@ The fact that the payload persists and is visible on a public login page magnifi
 
     <h2>Recommendation:</h2>
   <p>To mitigate this vulnerability, we recommend the following actions:
-Implement proper input validation and sanitization techniques to ensure that user-supplied data is properly encoded or filtered to prevent the injection of malicious code.
-Implement Content Security Policy (CSP) headers to restrict the execution of untrusted JavaScript code.
-Conduct a thorough security review and penetration testing of the entire website to identify and address any additional vulnerabilities.</p>
+<p>• Implement proper input validation and sanitization techniques to ensure that user-supplied data is properly encoded or filtered to prevent the injection of malicious code.</p>
+<p>• Implement Content Security Policy (CSP) headers to restrict the execution of untrusted JavaScript code.</p>
+<p>• Conduct a thorough security review and penetration testing of the entire website to identify and address any additional vulnerabilities.</p>
+</p>
   
       
 
