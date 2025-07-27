@@ -88,7 +88,59 @@ Conduct a thorough security review and penetration testing of the entire website
   </div>
 
   <div class="blog-entry">
-    <div class="blog-title">[2] Shortest Path to OSCP : A Realistic take on OSCP Journey</div>
+    <div class="blog-title">[2] Getting your $180 dollar bounty: Stored Cross-Site Scripting (XSS) via Login Page Notice Banner</div>
+    <img src="xss3.png" alt="CTF"style="display: block; margin: 0 auto;>
+    <div class="blog-summary">
+        <h2></h2>
+  <p><B>A throw back to one of my first ever bug caught out of blue while checking authenticated users ability to modify contents reflected in the login page.</B> </p>
+  
+
+      
+        <h2>Vulnerability Overview:</h2>
+  <p>A Stored XSS vulnerability was discovered in the application where a user with privileges to edit the Login Page Notice (displayed on the login page) injected malicious JavaScript code using the following payload: <pre>&lt;a href=&quot;javascript:alert(String.fromCharCode(88,83,83))&quot;&gt;Click Me!&lt;/a&gt;</pre></p>When other users visit the login page and click on the malicious link, arbitrary JavaScript executes in their browser in the context of the application, leading to XSS exploitation.</p>
+ 
+    <h2>Vulnerability Impact:</h2>
+  <p>User session hijacking: Attackers can steal session cookies or tokens.
+
+Phishing and social engineering: Malicious scripts can redirect users or display fake forms.
+
+Credential theft: Scripts can intercept usernames/passwords on login pages.
+
+Browser exploitation: Attackers can fingerprint the user or exploit browser vulnerabilities.
+
+Brand and legal damage: Users affected on a public-facing login screen erodes trust and may have regulatory implications (e.g., GDPR).
+
+The fact that the payload persists and is visible on a public login page magnifies the risk, especially if users are not authenticated yet and may not be expecting dynamic or interactive content.</p>
+  
+    <h2>Steps to Reproduce:</h2>
+<p>• Login as a user with permission to edit the Login Page Notice.</p>
+<p>• Navigate to the configuration menu which has the feature to edit the Login Page Notice.</p>
+<p>• Insert the following payload: &lt;a href="javascript:alert(String.fromCharCode(88,83,83))"&gt;Click Me!&lt;/a&gt;</p>
+<p>• Click on submit to save the changes.</p>
+<p>• Now, access the login page.</p>
+<p>• You will see the "Click Me!" text displayed.</p>
+<p>• Clicking on it will trigger a JavaScript alert popup.</p>
+  <img src="sxss1.png" alt="description" style="display: block; margin: 0 auto; width: 60%; max-width: 800px; height: auto; border: 1px solid #00ff00;"/><br>
+
+  <img src="sxss2.png" alt="description" style="display: block; margin: 0 auto; width: 60%; max-width: 800px; height: auto; border: 1px solid #00ff00;"><br>
+
+  <img src="sxss3.png" alt="description" style="display: block; margin: 0 auto; width: 60%; max-width: 800px; height: auto; border: 1px solid #00ff00;">
+
+    <h2>Recommendation:</h2>
+  <p>To mitigate this vulnerability, we recommend the following actions:
+Implement proper input validation and sanitization techniques to ensure that user-supplied data is properly encoded or filtered to prevent the injection of malicious code.
+Implement Content Security Policy (CSP) headers to restrict the execution of untrusted JavaScript code.
+Conduct a thorough security review and penetration testing of the entire website to identify and address any additional vulnerabilities.</p>
+  
+      
+
+
+
+    </div>
+  </div>
+
+  <div class="blog-entry">
+    <div class="blog-title">[3] Shortest Path to OSCP : A Realistic take on OSCP Journey</div>
     <img src="https://via.placeholder.com/600x300.png?text=MITM+Attack" alt="OSCP">
     <div class="blog-summary">
       Work in Progress...
@@ -96,7 +148,7 @@ Conduct a thorough security review and penetration testing of the entire website
   </div>
 
   <div class="blog-entry">
-    <div class="blog-title">[3] PNPT or Ejpt : Which the right beginner friendly cert?</div>
+    <div class="blog-title">[4] PNPT or Ejpt : Which the right beginner friendly cert?</div>
     <img src="https://via.placeholder.com/600x300.png?text=WAF+Bypass" alt="PNPT/EJPT">
     <div class="blog-summary">
       Work in Progress...
@@ -104,7 +156,7 @@ Conduct a thorough security review and penetration testing of the entire website
   </div>
 
   <div class="blog-entry">
-    <div class="blog-title">[4] How to Fare in Cybersecurity in 2025</div>
+    <div class="blog-title">[5] How to Fare in Cybersecurity in 2025</div>
     <img src="https://via.placeholder.com/600x300.png?text=Reverse+Engineering" alt="Hack">
     <div class="blog-summary">
       Work in Progress...
